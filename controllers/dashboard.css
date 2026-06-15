@@ -1,0 +1,272 @@
+:root {
+    --verde:       #10b981;
+    --verde-light: #e6f7f1;
+    --rojo:        #ef4444;
+    --rojo-light:  #fdecec;
+    --gris-fondo:  #1e1e2e;
+    --gris-card:   #ffffff;
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--gris-fondo);
+    color: #333;
+}
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background: var(--verde);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 5%;
+    box-shadow: 0 2px 12px rgba(16, 185, 129, 0.4);
+}
+.header-content {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: transparent;
+    padding: 0;
+}
+.header-content h1 {
+    color: #fff;
+    font-size: 20px;
+    font-weight: 700;
+}
+img.logo {
+    height: 40px;
+    border-radius: 8px;
+}
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+}
+.nav-links a {
+    color: #fff;
+    font-size: 14px;
+    text-decoration: none;
+    padding-bottom: 2px;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.3s ease;
+}
+.nav-links a:hover,
+.nav-links a.activo {
+    border-bottom-color: #fff;
+}
+.dashboard {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 110px 5% 60px;
+    background: transparent;
+}
+.ticket {
+    background: var(--gris-card);
+    border-radius: 16px;
+    padding: 30px;
+    margin-bottom: 30px;
+    text-align: center;
+    box-shadow: 0 4px 24px rgba(16, 185, 129, 0.35);
+}
+.ticket .etiqueta {
+    font-size: 13px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #888;
+    margin-bottom: 8px;
+}
+.ticket .monto {
+    font-size: 42px;
+    font-weight: 700;
+}
+.ticket .monto.positivo { color: #10b981; }
+.ticket .monto.negativo { color: #ef4444; }
+.ticket .detalle {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 14px;
+    font-size: 14px;
+    color: #555;
+}
+.ticket .detalle .lab {
+    color: #999;
+    margin-right: 5px;
+}
+.tarjeta {
+    background: var(--gris-card);
+    border-radius: 16px;
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 24px rgba(16, 185, 129, 0.35);
+}
+.tarjeta h2 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #333;
+}
+.fila {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-bottom: 15px;
+}
+.campo {
+    flex: 1;
+    min-width: 150px;
+    display: flex;
+    flex-direction: column;
+}
+.campo label {
+    font-size: 13px;
+    color: #777;
+    margin-bottom: 6px;
+}
+.tarjeta input {
+    padding: 10px 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: #f8f9fa;
+    color: #333;
+    font-size: 14px;
+}
+.tarjeta input:focus {
+    outline: 2px solid var(--verde);
+    border-color: var(--verde);
+}
+.tarjeta button[type="submit"] {
+    margin-top: 8px;
+    padding: 11px 28px;
+    background: var(--verde);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+.tarjeta button[type="submit"]:hover {
+    opacity: 0.88;
+}
+.tipo-toggle {
+    display: flex;
+    gap: 10px;
+    flex: 1;
+}
+.tipo-toggle label {
+    flex: 1;
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    color: #777;
+    transition: all 0.2s;
+}
+.tipo-toggle input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+.tipo-toggle label.ingreso:has(input:checked) {
+    background: var(--verde-light);
+    border-color: var(--verde);
+    color: var(--verde);
+}
+.tipo-toggle label.egreso:has(input:checked) {
+    background: var(--rojo-light);
+    border-color: var(--rojo);
+    color: var(--rojo);
+}
+.mensaje {
+    font-size: 14px;
+    padding: 12px 16px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    background: var(--verde-light);
+    color: var(--verde);
+    border: 1px solid var(--verde);
+}
+.libro {
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 14px;
+}
+.libro th {
+    text-align: left;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: #999;
+    padding: 10px;
+    border-bottom: 2px solid #eee;
+}
+.libro td {
+    padding: 12px 10px;
+    border-bottom: 1px solid #eee;
+}
+.badge {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 20px;
+}
+.badge.ingreso   { background: var(--verde-light); color: var(--verde); }
+.badge.egreso    { background: var(--rojo-light);  color: var(--rojo); }
+.badge.pendiente { background: #fef3e2; color: #f59e0b; }
+.badge.pagado    { background: #f1f1f1; color: #999; }
+.monto.ingreso { color: var(--verde); font-weight: 600; }
+.monto.egreso  { color: var(--rojo);  font-weight: 600; }
+.acciones a {
+    font-size: 13px;
+    color: var(--verde);
+    text-decoration: none;
+    font-weight: 500;
+}
+.acciones a:hover {
+    text-decoration: underline;
+}
+.vacio {
+    text-align: center;
+    color: #999;
+    padding: 30px 0;
+}
+@media (max-width: 600px) {
+    header {
+        flex-direction: column;
+        gap: 10px;
+        padding: 12px 5%;
+    }
+    .dashboard {
+        padding-top: 160px;
+    }
+    .ticket .monto {
+        font-size: 32px;
+    }
+}
+
+.bienvenida {
+    color: #fff;
+    font-size: 16px;
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+.bienvenida strong {
+    font-size: 20px;
+    font-weight: 700;
+}
