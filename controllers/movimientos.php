@@ -99,6 +99,7 @@ for ($i = 3; $i >= 0; $i--) {
 <title>Movimientos - Finance.com</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="icon" type="image/png" href="../assets/finance.jpg">
+    <link rel="icon" type="image/png" href="../assets/finance.jpg">
 <link rel="stylesheet" href="dashboard.css?v=<?= time() ?>">
 <style>
 .escaner-zona { margin-bottom: 24px; }
